@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 public class salas extends AppCompatActivity {
 
     FloatingActionButton fab;
+    Button btn_menu;
 
     static ArrayList<clase_salas> listaConferencistas = new ArrayList<clase_salas>();
 
@@ -65,8 +68,9 @@ public class salas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Toast.makeText(getApplicationContext(),  "hola putita", Toast.LENGTH_SHORT).show();
-
+                    Intent intent= new Intent(salas.this, clase_menu.class);
+                    startActivity(intent);
+                    finish();
                 } catch
                 (Exception e) { Toast.makeText(salas.this, "Ocurrió un error intentelo de nuevo", Toast.LENGTH_SHORT).show(); }
             }
